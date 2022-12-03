@@ -1,9 +1,7 @@
-import 'styles/globals.css';
-
-interface RootLayoutProps {
+export default function SignInLayout({
+  children
+}: {
   children: React.ReactNode;
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
+}) {
   return <div className='min-h-screen'>{children}</div>;
 }

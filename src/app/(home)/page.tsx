@@ -1,92 +1,28 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <>
-      <header className='container flex items-center justify-between py-4'>
-        <div className='flex gap-6 md:gap-10'>
-          <Link href='/' className='flex items-center space-x-2'>
-            <svg
-              width='24'
-              height='24'
-              viewBox='0 0 24 24'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                fillRule='evenodd'
-                clipRule='evenodd'
-                d='M13 3H21V11H13V3ZM15 5H19V9H15V5Z'
-                fill='currentColor'
-              />
-              <path
-                fillRule='evenodd'
-                clipRule='evenodd'
-                d='M17 21V13H11V7H3V21H17ZM9 9H5V13H9V9ZM5 19L5 15H9V19H5ZM11 19V15H15V19H11Z'
-                fill='currentColor'
-              />
-            </svg>
+      <section className='container grid items-center justify-center gap-6 pt-6 pb-8 md:pt-10 md:pb-12 lg:pt-16 lg:pb-24'>
+        <Image
+          src='/illustrations/product-launch.svg'
+          height={250}
+          width={250}
+          alt='Hero'
+          priority
+        />
 
-            <span className='hidden font-bold sm:inline-block'>Tiramisu</span>
-          </Link>
-          <nav className='flex items-center gap-6 sm:gap-8'>
-            <Link
-              href='#'
-              className='text-sm font-medium cursor-not-allowed opacity-60 hover:underline'
-            >
-              Courses
-            </Link>
-            <Link
-              href='#'
-              className='text-sm font-medium cursor-not-allowed opacity-60 hover:underline'
-            >
-              Blog
-            </Link>
-          </nav>
-        </div>
-        <nav>
-          <Link
-            href='/signin'
-            className='relative inline-flex items-center px-6 py-2 text-sm font-medium text-white border border-transparent rounded-md bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2'
-          >
-            Sign in
-          </Link>
-        </nav>
-      </header>
-
-      <section className='container grid items-center justify-center gap-6 pt-8 md:pt-12 lg:pt-24'>
-        <div className='flex flex-col items-start gap-4 md:max-w-[800px]'>
-          <Link
-            href='https://discord.com/invite/XNw2RZFzaP'
-            className='inline-flex items-center space-x-2 text-sm font-medium rounded-full group'
-          >
-            <span>Follow development on Discord</span>
-            <span className='p-1 transition-colors rounded-full bg-slate-100 group-hover:bg-slate-900 group-hover:text-white'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                className='w-3 h-3'
-              >
-                <line x1='5' y1='12' x2='19' y2='12'></line>
-                <polyline points='12 5 19 12 12 19'></polyline>
-              </svg>
-            </span>
-          </Link>
-          <h1 className='text-3xl font-black leading-[1.1] sm:text-4xl md:text-6xl'>
+        <div className='mx-auto flex flex-col items-start gap-4 lg:w-[52rem]'>
+          <h1 className='text-3xl font-bold leading-[1.1] tracking-tighter sm:text-5xl md:text-6xl'>
             Create wonderful bots with tiramisujs
           </h1>
-          <p className='max-w-[85%] text-lg leading-normal text-slate-700 sm:text-xl sm:leading-8'>
+          <p className='max-w-[42rem] leading-normal text-slate-700 sm:text-xl sm:leading-8'>
             A set of packages for interacting with discord, focused on
             performance and scalability.
           </p>
         </div>
+
         <div className='flex gap-4'>
           <a
             className='relative inline-flex items-center px-8 py-2 font-medium text-white border border-transparent rounded-md h-11 bg-brand-500 hover:bg-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2'
@@ -120,22 +56,19 @@ export default function Home() {
         </div>
       </section>
 
-      <div className='container py-12 md:py-18 lg:py-24'>
-        <hr className='border-slate-100' />
-      </div>
+      <hr className='border-slate-200' />
 
-      <section className='container grid justify-center gap-6'>
-        <div className='mx-auto flex flex-col gap-4 md:max-w-[800px]'>
-          <h2 className='text-2xl font-bold leading-[1.1] sm:text-3xl md:text-6xl'>
+      <section className='container grid justify-center gap-6 py-8 md:py-12 lg:py-24'>
+        <div className='mx-auto flex flex-col gap-4 md:max-w-[52rem]'>
+          <h2 className='text-3xl font-bold leading-[1.1] tracking-tighter sm:text-3xl md:text-6xl'>
             Projects
           </h2>
           <p className='max-w-[85%] leading-normal text-slate-700 sm:text-lg sm:leading-7'>
-            Tiramisu is primarily inspired by Discord.js and Discordeno but it
-            does not include a cache layer by default, we believe that you
-            should not make software that does things it is not supposed to do.
+            Tiramisu comes in small packages that you can configure and
+            predefine as you wish for your project.
           </p>
         </div>
-        <div className='grid justify-center gap-4 sm:grid-cols-2 md:max-w-[860px] md:grid-cols-3'>
+        <div className='grid justify-center gap-4 sm:grid-cols-2 md:max-w-[56rem] md:grid-cols-3'>
           <div className='relative p-2 overflow-hidden bg-white border rounded-lg shadow-2xl border-slate-100'>
             <div className='flex h-[180px] flex-col justify-between rounded-md bg-[#f45e1e]/20 p-6'>
               <svg
@@ -295,10 +228,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <div className='container py-12 md:py-18 lg:py-24'>
-        <hr className='border-slate-100' />
-      </div>
     </>
   );
 }
